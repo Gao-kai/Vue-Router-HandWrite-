@@ -12,6 +12,17 @@
   </div>
 </template>
 
+
+<script>
+export default {
+  data(){
+    return {
+      app:true
+    }
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

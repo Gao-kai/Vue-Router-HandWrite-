@@ -7,7 +7,7 @@ export default function createRouteMap(routes,routeMap){
 		addRouteRecord(route,routeMap);
 	})
 	
-	// console.log('routeMap',routeMap);
+	console.log('routeMap',routeMap);
 	
 	return {
 		routeMap

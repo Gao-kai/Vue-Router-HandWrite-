@@ -60,6 +60,7 @@ export default class Base {
 	transtionTo(location, listener) {
 		let record = this.router.match(location);
 		let route = createRoute(record,{path:location});
+		console.log('route',route);
 		/* 
 			如何判定是重复操作：
 			1. 要跳转的目标路径前后一致
@@ -73,6 +74,7 @@ export default class Base {
 		
 		// 先处理导航守卫 然后再决定是否执行跳转逻辑
 		let quene = [].concat(this.router.beforeEachHooks,this.router.beforeResolveHooks,this.router.afterEachHooks)
+
 		runQuene(quene,this.current,route,()=>{
 			// 将最新的匹配结果赋值给this.current 便于下一次比较
 			this.current = route;

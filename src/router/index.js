@@ -63,22 +63,24 @@ const router = new VueRouter({
 	routes
 })
 
+window.router = router;
+
 // 手动添加路由
-router.matcher.addRoutes([
-	{
-		path: '/about',
-		name: 'About',
-		children:[
-			{
-				path: 'e',
-				name: 'AboutE',
-				component: {
-					render:(h)=> <h1>AboutE</h1>
-				},
-			},
-		]
-	}
-])
+// router.matcher.addRoutes([
+// 	{
+// 		path: '/about',
+// 		name: 'About',
+// 		children:[
+// 			{
+// 				path: 'e',
+// 				name: 'AboutE',
+// 				component: {
+// 					render:(h)=> <h1>AboutE</h1>
+// 				},
+// 			},
+// 		]
+// 	}
+// ])
 
 // 添加全局导航守卫
 router.beforeEach((from,to,next)=>{

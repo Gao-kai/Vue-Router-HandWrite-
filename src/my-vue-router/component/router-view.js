@@ -21,7 +21,9 @@ export default {
 	 */
 	functional: true,
 	render(h,{parent,data}){
-		// console.log('data',data)
+		console.log('router-view组件被加载，父组件实例为',data,parent._data);
+		console.log('当前组件的父组件也是加载的环境',parent._vnode?.elm);
+
 		// 获取router-view组件所处的路由信息对象
 		let route = parent.$route;
 		let depth = 0;
@@ -41,6 +43,7 @@ export default {
 		
 		// 按照顺序加载获取record对象
 		let record = route.matched[depth];
+		console.log('route',route)
 		if(!record){
 			return h();
 		}

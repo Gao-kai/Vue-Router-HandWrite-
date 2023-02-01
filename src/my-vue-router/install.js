@@ -49,6 +49,7 @@ function install(VueCtor) {
 				/* 
 					给当前根实例this上新增一个响应式属性_route 值为router.history.current对象
 					保证可以在任意组件中通过this._route获取到当前路由实例的current对象 
+					
 					不能使用set方法 因为不可以给this上添加响应式属性
 					取值 收集依赖
 					存值 也就是路由切换之后 transtionTo方法执行 this.current重新赋值为新的route

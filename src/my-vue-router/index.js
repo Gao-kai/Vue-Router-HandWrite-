@@ -67,18 +67,17 @@ class VueRouter {
 		})
 		
 		// 根据路径的变化匹配对应的组件进行渲染 路径变化 => 更新视图(响应式路径 )
-		
 		history.listen((newRoute)=>{
 			rootApp._route = newRoute;
 		});
 	}
 	
-	/* 路由跳转 */
+	/* 路由跳转... */
 	push(location){
 		return this.history.push(location);
 	}
 	
-	// 全局前置导航守卫
+	// 全局前置导航守卫...
 	beforeEach(callback){
 		this.beforeEachHooks.push(callback);
 	}
